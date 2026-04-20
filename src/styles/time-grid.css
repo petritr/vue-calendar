@@ -1,0 +1,206 @@
+.vc-time-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Day headers row */
+.vc-time-grid__header {
+  display: flex;
+  border-bottom: 1px solid var(--vc-border-color);
+  flex-shrink: 0;
+}
+
+.vc-time-grid__header-gutter {
+  width: var(--vc-time-axis-width);
+  flex-shrink: 0;
+}
+
+.vc-time-grid__header-days {
+  display: flex;
+  flex: 1;
+}
+
+.vc-time-grid__header-day {
+  flex: 1;
+  text-align: center;
+  padding: 8px 4px;
+  font: var(--vc-typescale-body-small);
+  color: var(--vc-color-on-surface-variant);
+}
+
+.vc-time-grid__header-day-name {
+  text-transform: uppercase;
+  font: var(--vc-typescale-label-small);
+  letter-spacing: 0.5px;
+}
+
+.vc-time-grid__header-day-number {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--vc-color-on-surface);
+  line-height: 1.2;
+}
+
+.vc-time-grid__header-day--today .vc-time-grid__header-day-number {
+  background: var(--vc-color-primary);
+  color: var(--vc-color-on-primary);
+  border-radius: var(--vc-shape-full);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full-day events row */
+.vc-time-grid__allday {
+  display: flex;
+  border-bottom: 1px solid var(--vc-border-color);
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.vc-time-grid__allday-gutter {
+  width: var(--vc-time-axis-width);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--vc-typescale-label-small);
+  color: var(--vc-color-on-surface-variant);
+}
+
+.vc-time-grid__allday-content {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+  padding: 4px 0;
+  align-items: flex-start;
+}
+
+.vc-time-grid__allday-day {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 2px;
+}
+
+/* Scrollable time body */
+.vc-time-grid__body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.vc-time-grid__body-inner {
+  display: flex;
+  position: relative;
+}
+
+/* Time axis */
+.vc-time-grid__time-axis {
+  width: var(--vc-time-axis-width);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.vc-time-grid__time-label {
+  position: absolute;
+  right: 8px;
+  transform: translateY(-50%);
+  font: var(--vc-typescale-body-small);
+  color: var(--vc-color-on-surface-variant);
+  white-space: nowrap;
+}
+
+/* Day columns */
+.vc-time-grid__columns {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.vc-time-grid__column {
+  flex: 1;
+  position: relative;
+  border-right: 1px solid var(--vc-border-color);
+}
+
+.vc-time-grid__column:last-child {
+  border-right: none;
+}
+
+/* Hour rows */
+.vc-time-grid__hour-row {
+  position: relative;
+  height: var(--vc-hour-height);
+  border-bottom: 1px solid var(--vc-border-color);
+  transition: background var(--vc-transition-fast);
+}
+
+.vc-time-grid__hour-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--vc-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--vc-transition-fast);
+  pointer-events: none;
+}
+
+.vc-time-grid__hour-row:hover::before {
+  opacity: var(--vc-state-hover-opacity);
+}
+
+.vc-time-grid__hour-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-bottom: 1px dashed var(--vc-color-outline-variant);
+  opacity: 0.4;
+}
+
+/* Click target for creating events */
+.vc-time-grid__column-bg {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* Events layer */
+.vc-time-grid__events-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vc-time-grid__events-layer > * {
+  pointer-events: auto;
+}
+
+/* Current time indicator */
+.vc-current-time {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--vc-color-error);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.vc-current-time::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--vc-shape-full);
+  background: var(--vc-color-error);
+}

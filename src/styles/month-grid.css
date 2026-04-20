@@ -1,0 +1,110 @@
+.vc-month-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vc-month-grid__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--vc-border-color);
+  flex-shrink: 0;
+}
+
+.vc-month-grid__weekday {
+  padding: 8px 4px;
+  text-align: center;
+  font: var(--vc-typescale-label-small);
+  color: var(--vc-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vc-month-grid__body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex: 1;
+}
+
+.vc-month-grid__cell {
+  position: relative;
+  border-right: 1px solid var(--vc-border-color);
+  border-bottom: 1px solid var(--vc-border-color);
+  padding: 4px;
+  min-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background var(--vc-transition-fast);
+}
+
+.vc-month-grid__cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--vc-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--vc-transition-fast);
+  pointer-events: none;
+}
+
+.vc-month-grid__cell:hover::before {
+  opacity: var(--vc-state-hover-opacity);
+}
+
+.vc-month-grid__cell:nth-child(7n) {
+  border-right: none;
+}
+
+.vc-month-grid__cell--outside {
+  opacity: 0.4;
+}
+
+.vc-month-grid__cell--today .vc-month-grid__day-number {
+  background: var(--vc-color-primary);
+  color: var(--vc-color-on-primary);
+  border-radius: var(--vc-shape-full);
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vc-month-grid__day-number {
+  font: var(--vc-typescale-body-medium);
+  color: var(--vc-color-on-surface);
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.vc-month-grid__events {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.vc-month-grid__more {
+  font: var(--vc-typescale-label-small);
+  color: var(--vc-color-on-surface-variant);
+  padding: 1px 4px;
+  cursor: pointer;
+}
+
+.vc-month-grid__more:hover {
+  color: var(--vc-color-primary);
+}
+
+.vc-month-grid__cell--expanded {
+  overflow: visible;
+  z-index: 2;
+}
+
+.vc-month-grid__cell--expanded .vc-month-grid__events {
+  position: relative;
+  background: var(--vc-color-surface-container-low);
+  border-radius: var(--vc-shape-extra-small);
+  box-shadow: var(--vc-elevation-2);
+  padding: 4px;
+  z-index: 2;
+}

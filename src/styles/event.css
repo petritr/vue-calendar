@@ -1,0 +1,212 @@
+/* Shared event styles */
+.vc-event {
+  position: relative;
+  border-radius: var(--vc-shape-extra-small);
+  padding: 2px 6px;
+  font: var(--vc-typescale-body-small);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition:
+    box-shadow var(--vc-transition-fast),
+    opacity var(--vc-transition-fast);
+  user-select: none;
+  line-height: 1.4;
+}
+
+/* State layer for events */
+.vc-event::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--vc-transition-fast);
+  pointer-events: none;
+}
+
+.vc-event:hover::before {
+  opacity: var(--vc-state-hover-opacity);
+}
+
+.vc-event:active::before {
+  opacity: var(--vc-state-pressed-opacity);
+}
+
+.vc-event:hover {
+  box-shadow: var(--vc-elevation-2);
+}
+
+/* Month grid event chip */
+.vc-event--month {
+  background: var(--vc-event-bg, var(--vc-color-primary-container));
+  color: var(--vc-event-color, var(--vc-color-on-primary-container));
+  font: var(--vc-typescale-label-small);
+  padding: 1px 6px;
+  border-left: 3px solid var(--vc-event-accent, var(--vc-color-primary));
+}
+
+/* Time grid event block */
+.vc-event--time {
+  position: absolute;
+  background: var(--vc-event-bg, var(--vc-color-primary-container));
+  color: var(--vc-event-color, var(--vc-color-on-primary-container));
+  border-left: 3px solid var(--vc-event-accent, var(--vc-color-primary));
+  border-radius: var(--vc-shape-extra-small);
+  padding: 4px 6px;
+  overflow: hidden;
+  white-space: normal;
+  z-index: 1;
+}
+
+.vc-event--time:hover {
+  z-index: 3;
+}
+
+.vc-event__title {
+  font: var(--vc-typescale-label-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vc-event__time {
+  font: var(--vc-typescale-label-small);
+  opacity: 0.8;
+}
+
+/* Full-day event */
+.vc-event--allday {
+  background: var(--vc-event-bg, var(--vc-color-primary));
+  color: var(--vc-event-color, var(--vc-color-on-primary));
+  padding: 2px 8px;
+  border-radius: var(--vc-shape-extra-small);
+  font: var(--vc-typescale-label-small);
+}
+
+/* Resize handle */
+.vc-event__resize-handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  cursor: ns-resize;
+  z-index: 2;
+  border-radius: 0 0 var(--vc-shape-extra-small) var(--vc-shape-extra-small);
+}
+
+.vc-event__resize-handle:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Background event (non-interactive) */
+.vc-event--background {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+  border-left: none;
+  z-index: 0 !important;
+}
+
+.vc-event--background::before {
+  display: none;
+}
+
+.vc-event--background:hover {
+  box-shadow: none;
+}
+
+/* Dragging state */
+.vc-event--dragging {
+  opacity: 0.4;
+  z-index: 10 !important;
+}
+
+/* Ghost preview during drag/resize */
+.vc-event--ghost {
+  opacity: 0.6;
+  border: 2px dashed var(--vc-event-accent, var(--vc-color-primary));
+  pointer-events: none;
+  z-index: 5;
+  background: var(--vc-event-bg, var(--vc-color-primary-container));
+}
+
+.vc-event--ghost::before {
+  display: none;
+}
+
+/* ===== Event modal ===== */
+.vc-event-modal {
+  position: fixed;
+  z-index: 1000;
+  background: var(--vc-color-surface-container-low);
+  border-radius: var(--vc-shape-large);
+  box-shadow: var(--vc-elevation-3);
+  padding: 20px;
+  min-width: 280px;
+  max-width: 400px;
+  border: 1px solid var(--vc-border-color);
+  font-family: var(--vc-font-family);
+}
+
+.vc-event-modal--centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vc-event-modal__title {
+  font: var(--vc-typescale-title-large);
+  margin-bottom: 8px;
+  color: var(--vc-color-on-surface);
+}
+
+.vc-event-modal__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  font: var(--vc-typescale-body-medium);
+  color: var(--vc-color-on-surface-variant);
+}
+
+.vc-event-modal__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--vc-shape-full);
+  background: transparent;
+  color: var(--vc-color-on-surface-variant);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.vc-event-modal__close::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--vc-color-on-surface-variant);
+  opacity: 0;
+  transition: opacity var(--vc-transition-fast);
+  pointer-events: none;
+}
+
+.vc-event-modal__close:hover::before {
+  opacity: var(--vc-state-hover-opacity);
+}
+
+.vc-event-modal__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}

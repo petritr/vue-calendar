@@ -1,0 +1,199 @@
+:root {
+  /* ===== Primary ===== */
+  --vc-color-primary: #6750a4;
+  --vc-color-on-primary: #ffffff;
+  --vc-color-primary-container: #eaddff;
+  --vc-color-on-primary-container: #21005e;
+
+  /* ===== Secondary ===== */
+  --vc-color-secondary: #625b71;
+  --vc-color-on-secondary: #ffffff;
+  --vc-color-secondary-container: #e8def8;
+  --vc-color-on-secondary-container: #1e192b;
+
+  /* ===== Surface ===== */
+  --vc-color-surface: #fef7ff;
+  --vc-color-on-surface: #1c1b1f;
+  --vc-color-surface-variant: #e7e0ec;
+  --vc-color-on-surface-variant: #49454f;
+  --vc-color-surface-dim: #ded8e1;
+
+  /* Surface containers */
+  --vc-color-surface-container-lowest: #ffffff;
+  --vc-color-surface-container-low: #f7f2fa;
+  --vc-color-surface-container: #f3edf7;
+  --vc-color-surface-container-high: #ece6f0;
+  --vc-color-surface-container-highest: #e6e0e9;
+  --vc-color-inverse-surface: #313033;
+  --vc-color-inverse-primary: #d0bcff;
+
+  /* ===== Error ===== */
+  --vc-color-error: #b3261e;
+  --vc-color-on-error: #ffffff;
+  --vc-color-error-container: #f9dedc;
+  --vc-color-on-error-container: #410e0b;
+
+  /* ===== Outline ===== */
+  --vc-color-outline: #79747e;
+  --vc-color-outline-variant: #c4c7c5;
+
+  /* ===== Typography ===== */
+  --vc-font-family: 'Google Sans', 'Roboto Flex', Roboto, sans-serif;
+
+  /* Display */
+  --vc-typescale-display-large: 400 57px/64px var(--vc-font-family);
+  --vc-typescale-display-medium: 400 45px/52px var(--vc-font-family);
+  --vc-typescale-display-small: 400 36px/44px var(--vc-font-family);
+
+  /* Headline */
+  --vc-typescale-headline-large: 400 32px/40px var(--vc-font-family);
+  --vc-typescale-headline-medium: 400 28px/36px var(--vc-font-family);
+  --vc-typescale-headline-small: 400 24px/32px var(--vc-font-family);
+
+  /* Title */
+  --vc-typescale-title-large: 400 22px/28px var(--vc-font-family);
+  --vc-typescale-title-medium: 500 16px/24px var(--vc-font-family);
+  --vc-typescale-title-small: 500 14px/20px var(--vc-font-family);
+
+  /* Body */
+  --vc-typescale-body-large: 400 16px/24px var(--vc-font-family);
+  --vc-typescale-body-medium: 400 14px/20px var(--vc-font-family);
+  --vc-typescale-body-small: 400 12px/16px var(--vc-font-family);
+
+  /* Label */
+  --vc-typescale-label-large: 500 14px/20px var(--vc-font-family);
+  --vc-typescale-label-medium: 500 12px/16px var(--vc-font-family);
+  --vc-typescale-label-small: 500 11px/16px var(--vc-font-family);
+
+  /* Legacy font-size aliases (for backward compat) */
+  --vc-font-size: 14px;
+  --vc-font-size-sm: 12px;
+  --vc-font-size-xs: 11px;
+
+  /* ===== Shape ===== */
+  --vc-shape-extra-small: 4px;
+  --vc-shape-small: 8px;
+  --vc-shape-medium: 12px;
+  --vc-shape-large: 16px;
+  --vc-shape-extra-large: 28px;
+  --vc-shape-full: 9999px;
+
+  /* Legacy aliases */
+  --vc-border-radius: var(--vc-shape-small);
+  --vc-border-radius-sm: var(--vc-shape-extra-small);
+  --vc-border-color: var(--vc-color-outline-variant);
+  --vc-event-border-radius: var(--vc-shape-extra-small);
+
+  /* ===== Elevation (MD3 dual-shadow) ===== */
+  --vc-elevation-0: none;
+  --vc-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --vc-elevation-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --vc-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+  --vc-elevation-4: 0 6px 10px 4px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.3);
+  --vc-elevation-5: 0 8px 12px 6px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.3);
+
+  /* Legacy shadow aliases */
+  --vc-shadow-sm: var(--vc-elevation-1);
+  --vc-shadow-md: var(--vc-elevation-2);
+  --vc-shadow-lg: var(--vc-elevation-3);
+
+  /* Surface tint opacity (per elevation level) */
+  --vc-surface-tint-opacity-1: 0.05;
+  --vc-surface-tint-opacity-2: 0.08;
+  --vc-surface-tint-opacity-3: 0.11;
+  --vc-surface-tint-opacity-4: 0.12;
+  --vc-surface-tint-opacity-5: 0.14;
+
+  /* ===== State layers ===== */
+  --vc-state-hover-opacity: 0.08;
+  --vc-state-focus-opacity: 0.12;
+  --vc-state-pressed-opacity: 0.12;
+  --vc-state-dragged-opacity: 0.16;
+
+  /* ===== Motion ===== */
+  /* Easing */
+  --vc-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --vc-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --vc-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --vc-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --vc-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --vc-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+
+  /* Durations */
+  --vc-motion-duration-short1: 50ms;
+  --vc-motion-duration-short2: 100ms;
+  --vc-motion-duration-short3: 150ms;
+  --vc-motion-duration-short4: 200ms;
+  --vc-motion-duration-medium1: 250ms;
+  --vc-motion-duration-medium2: 300ms;
+  --vc-motion-duration-medium3: 350ms;
+  --vc-motion-duration-medium4: 400ms;
+  --vc-motion-duration-long1: 450ms;
+  --vc-motion-duration-long2: 500ms;
+
+  /* Legacy transition aliases */
+  --vc-transition-fast: var(--vc-motion-duration-short3) var(--vc-motion-easing-standard);
+  --vc-transition-normal: var(--vc-motion-duration-medium1) var(--vc-motion-easing-standard);
+
+  /* ===== Time grid ===== */
+  --vc-time-axis-width: 60px;
+  --vc-hour-height: 60px;
+
+  /* ===== Resource view ===== */
+  --vc-resource-row-height: 60px;
+  --vc-resource-sidebar-width: 180px;
+  --vc-resource-hour-width: 80px;
+}
+
+/* ===== Ripple keyframes ===== */
+@keyframes vc-ripple {
+  from {
+    transform: scale(0);
+    opacity: var(--vc-state-pressed-opacity);
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* ===== Dark Mode ===== */
+[data-vc-dark='true'] {
+  --vc-color-primary: #d0bcff;
+  --vc-color-on-primary: #381e72;
+  --vc-color-primary-container: #4f378b;
+  --vc-color-on-primary-container: #eaddff;
+
+  --vc-color-secondary: #ccc2dc;
+  --vc-color-on-secondary: #332d41;
+  --vc-color-secondary-container: #4a4458;
+  --vc-color-on-secondary-container: #e8def8;
+
+  --vc-color-surface: #141218;
+  --vc-color-on-surface: #e6e1e5;
+  --vc-color-surface-variant: #49454f;
+  --vc-color-on-surface-variant: #cac4d0;
+  --vc-color-surface-dim: #141218;
+
+  --vc-color-surface-container-lowest: #0f0d13;
+  --vc-color-surface-container-low: #1d1b20;
+  --vc-color-surface-container: #211f26;
+  --vc-color-surface-container-high: #2b2930;
+  --vc-color-surface-container-highest: #36343b;
+  --vc-color-inverse-surface: #e6e1e5;
+  --vc-color-inverse-primary: #6750a4;
+
+  --vc-color-error: #f2b8b5;
+  --vc-color-on-error: #601410;
+  --vc-color-error-container: #8c1d18;
+  --vc-color-on-error-container: #f9dedc;
+
+  --vc-color-outline: #938f99;
+  --vc-color-outline-variant: #444746;
+
+  --vc-elevation-1: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6);
+  --vc-elevation-2: 0 2px 6px 2px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.6);
+  --vc-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.6);
+  --vc-elevation-4: 0 6px 10px 4px rgba(0, 0, 0, 0.4), 0 2px 3px rgba(0, 0, 0, 0.6);
+  --vc-elevation-5: 0 8px 12px 6px rgba(0, 0, 0, 0.4), 0 4px 4px rgba(0, 0, 0, 0.6);
+}
