@@ -29,6 +29,8 @@ jobs:
 
       - run: npm run build:demo
 
+      - run: touch demo-dist/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: demo-dist
