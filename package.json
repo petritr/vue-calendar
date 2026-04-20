@@ -64,6 +64,11 @@
     "vue": "^3.5.0",
     "vue-tsc": "^2.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petritr/vue-calendar.git"
+  },
+  "homepage": "https://petritr.github.io/vue-calendar/",
   "license": "MIT",
   "dependencies": {
     "temporal-polyfill": "^0.3.0"
