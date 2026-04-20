@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const isDemo = mode === 'demo'
 
   return {
-    base: isDemo ? './' : '/',
+    base: isDemo ? '/vue-calendar/' : '/',
     plugins: [
       vue(),
       ...(!isDemo
