@@ -1,5 +1,6 @@
 # @vue-calendar/core
 
+[![npm downloads](https://img.shields.io/npm/dm/@vue-calendar/core.svg)](https://www.npmjs.com/package/@vue-calendar/core)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Vue 3](https://img.shields.io/badge/vue-3.4+-42b883.svg)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-strict-3178c6.svg)](https://www.typescriptlang.org/)

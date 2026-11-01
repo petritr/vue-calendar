@@ -23,6 +23,6 @@ jobs:
 
       - run: npm run build
 
+      - run: npm install -g npm@11.19.1
+
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
