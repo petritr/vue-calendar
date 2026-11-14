@@ -8,6 +8,7 @@
     "jsx": "preserve",
     "declaration": true,
     "declarationDir": "./dist",
+    "rootDir": "./src",
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -18,7 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "exactOptionalPropertyTypes": false,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
