@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
-    "@types/node": "^26.6.6",
+    "@types/node": "^22.20.5",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.4.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "^10.12.0",
     "jiti": "^2.6.1",
     "prettier": "^3.5.0",
-    "typescript": "~7.0.2",
+    "typescript": "~6.0.3",
     "vite": "8.3.5",
     "vite-plugin-css-injected-by-js": "^5.0.3",
     "vite-plugin-dts": "^5.1.2",
